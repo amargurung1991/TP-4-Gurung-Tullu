@@ -83,7 +83,7 @@ public class TRLAppTest {
 		TRLAppController T1= new TRLAppController("P1", "W1");
 		System.out.println(T1.getReturnDate());
 	}
-	
+	/*
 	@Test
 	public void InsertData()
 	{
@@ -91,9 +91,9 @@ public class TRLAppTest {
 		H1.insertData("A1", "B1", "2017-11-11");
 		System.out.println("success");
 	}
-	/*
+	
 	@Test
-	public void RetrieveData()
+	public void retrieveData()
 	{
 		DataHandler H1 = new DataHandler();
 		System.out.println(H1.RetreiveHold("A1"));
@@ -115,7 +115,7 @@ public class TRLAppTest {
 		System.out.println();
 		System.out.println(H1.RetreiveHold("A1"));
 	}
-	*/
+	
 	@Test
 	public void deleteRecord()
 	{
@@ -124,6 +124,15 @@ public class TRLAppTest {
 		System.out.println();
 		H1.removeData("A1", "B1");
 		System.out.println("success");
+	}
+	*/
+	@Test
+	public void getDate()
+	{
+		DataHandler H1 = new DataHandler();
+		System.out.println();
+		System.out.println();
+		System.out.println(H1.retrieveReturnDate("P1", "C1"));
 	}
 
 

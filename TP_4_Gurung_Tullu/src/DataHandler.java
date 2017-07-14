@@ -25,7 +25,7 @@ public class DataHandler {
      }
      
      
-     public String RetreiveHold(String patronID)
+     public String retreiveHold(String patronID)
      {
      try {
         Class.forName("org.sqlite.JDBC");
@@ -40,6 +40,28 @@ public class DataHandler {
         c.commit();
         c.close();
         return hold;
+     } catch ( Exception e ) {
+       
+        System.out.println(e.toString());
+        return null;
+     }
+     }
+     
+     public String retrieveReturnDate(String patronID, String copyID)
+     {
+     try {
+        Class.forName("org.sqlite.JDBC");
+        c = DriverManager.getConnection("jdbc:sqlite:LibraryDataHouse.db");
+        c.setAutoCommit(false);
+
+        stmt = c.createStatement();
+        ResultSet rs = stmt.executeQuery( "SELECT ReturnDate FROM PatronCopyInfo where PatronID = '"  + patronID +"' and BookID = '"+ copyID +"';" );
+       String date = rs.getString("ReturnDate");
+
+        stmt.close();
+        c.commit();
+        c.close();
+        return date;
      } catch ( Exception e ) {
        
         System.out.println(e.toString());
