@@ -1,6 +1,7 @@
 
+import java.util.ArrayList;
+import java.util.Calendar;
 
-	import java.util.ArrayList;
 
 	public class Patron
 	{
@@ -8,6 +9,7 @@
 		private String patronID;
 		private String hold;
 		private ArrayList<Copy> copiesOut = new ArrayList<Copy>();
+		
 
 		public Patron(String id, String name, String hold)
 		{
@@ -41,6 +43,7 @@
 			
 		}
 
+		
 		public boolean checkCopyIn(Copy c)
 		{
 			c.setOutTo(null);
@@ -53,10 +56,18 @@
 			return false;
 		}
 
+		public String returnDate()
+		{
+			Calendar cal = Calendar.getInstance();
+					cal.add(Calendar.DATE, 120);
+					
+		
+			return cal.getTime().toString();
+		}
 		@Override
 		public boolean equals(Object o)
 		{
-			// finish this: two are equals iff same patron ID
+			// two are equals iff same patron ID
 			if (this == o) {
 	            return true;
 	        } else if (o == null) {
@@ -70,6 +81,8 @@
 	        }
 	        return false;
 		}
+		
+		
 
 		public String toString()
 		{

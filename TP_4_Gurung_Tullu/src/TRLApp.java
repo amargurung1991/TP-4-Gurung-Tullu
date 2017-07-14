@@ -53,7 +53,7 @@ public class TRLApp {
 					}
 				}
 				
-				System.out.println("Due Date: " + T1.returnDate());
+			
 			
 				
 				

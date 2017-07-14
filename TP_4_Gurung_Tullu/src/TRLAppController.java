@@ -1,4 +1,4 @@
-import java.util.Calendar;
+
 
 public class TRLAppController 
 {
@@ -48,14 +48,7 @@ public class TRLAppController
 		return P1;
 	}
 	
-	public String returnDate()
-	{
-		Calendar cal = Calendar.getInstance();
-				cal.add(Calendar.DATE, 120);
-				
 	
-		return cal.getTime().toString();
-	}
 	
 	public Patron CheckOutComplete()
 	{
