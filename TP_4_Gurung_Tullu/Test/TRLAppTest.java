@@ -106,5 +106,16 @@ public class TRLAppTest {
 		H1.addHold("A1", "Hold");
 		System.out.println(H1.RetreiveHold("A1"));
 	}
+	
+	@Test
+	public void deleteHold()
+	{
+		DataHandler H1 = new DataHandler();
+		H1.deleteHold("A1");
+		System.out.println();
+		System.out.println(H1.RetreiveHold("A1"));
+	}
+	
+
 
 }
