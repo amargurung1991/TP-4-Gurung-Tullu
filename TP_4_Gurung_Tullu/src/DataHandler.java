@@ -11,7 +11,7 @@ public class DataHandler {
 
         stmt = c.createStatement();
         String sql = "INSERT INTO PatronCopyInfo (PatronID,BookID,ReturnDate) " +
-                       "VALUES (" + patronID +", "+bookId+", "+ date +");"; 
+                       "VALUES ('" + patronID +"', '"+bookId+"', '"+ date +"');"; 
         stmt.executeUpdate(sql);
 
         stmt.close();
@@ -19,6 +19,7 @@ public class DataHandler {
         c.close();
      } catch ( Exception e )
      {
+    	 System.out.println(e.toString());
         System.exit(0);
      }
      }
@@ -32,7 +33,7 @@ public class DataHandler {
         c.setAutoCommit(false);
 
         stmt = c.createStatement();
-        ResultSet rs = stmt.executeQuery( "SELECT Top(1) Hold FROM PatronCopyInfo where PatronID = "  + patronID +";" );
+        ResultSet rs = stmt.executeQuery( "SELECT Top(1) Hold FROM PatronCopyInfo where PatronID = '"  + patronID +"';" );
        String hold = rs.getString("Hold");
 
         stmt.close();
@@ -40,7 +41,8 @@ public class DataHandler {
         c.close();
         return hold;
      } catch ( Exception e ) {
-        System.exit(0);
+       
+        System.out.println(e.toString());
         return null;
      }
 	
@@ -55,7 +57,7 @@ public class DataHandler {
 
     	        stmt = c.createStatement();
     	        String sql = "DELETE FROM PatronCopyInfo" +
-    	        		"WHERE PatronID = " + patronId +" and BookId =  "+ bookID +");"; 
+    	        		"WHERE PatronID = '" + patronId +"' and BookId =  '"+ bookID +"');"; 
     	        stmt.executeUpdate(sql);
 
     	        stmt.close();
@@ -64,8 +66,11 @@ public class DataHandler {
     	        return true;
     	     } catch ( Exception e )
     	     {
-    	        System.exit(0);
-    	        return false;
+    	    	 System.out.println(e.toString());
+    	    
+    	    	 return false;
+    	        
+    	       
     	     } 
      }
      
@@ -78,7 +83,7 @@ public class DataHandler {
 
 	        stmt = c.createStatement();
 	        String sql = "UPDATE PatronCopyInfo SET Hold = Null " +
-	        		"WHERE PatronID = " + patronId +");"; 
+	        		"WHERE PatronID = '" + patronId +"');"; 
 	        stmt.executeUpdate(sql);
 
 	        stmt.close();
@@ -87,7 +92,7 @@ public class DataHandler {
 	        return true;
 	     } catch ( Exception e )
 	     {
-	        System.exit(0);
+	    	 System.out.println(e.toString());
 	        return false;
 	     } 
      }
@@ -101,7 +106,7 @@ public class DataHandler {
 
 	        stmt = c.createStatement();
 	        String sql = "UPDATE PatronCopyInfo SET Hold = " + hold +
-	        		"WHERE PatronID = " + patronId +");"; 
+	        		"WHERE PatronID = '" + patronId +"');"; 
 	        stmt.executeUpdate(sql);
 
 	        stmt.close();
@@ -110,7 +115,7 @@ public class DataHandler {
 	        return true;
 	     } catch ( Exception e )
 	     {
-	        System.exit(0);
+	    	 System.out.println(e.toString());
 	        return false;
 	     } 
   }

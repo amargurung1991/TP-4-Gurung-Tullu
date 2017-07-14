@@ -1,18 +1,7 @@
 
-P1	checked out copy:	C1	Worker:	W1	Fri Jul 14 04:05:09 GMT-06:00 2017
-P1	checked out copy:	C2	Worker:	W1	Fri Jul 14 04:05:16 GMT-06:00 2017
-P1	checked in copy:	C1	Worker:	W1	Fri Jul 14 04:05:27 GMT-06:00 2017
-P1	checked in copy:	C2	Worker:	W1	Fri Jul 14 04:05:33 GMT-06:00 2017
-P1	checked out copy:	C1	Worker:	w1	Fri Jul 14 04:06:43 GMT-06:00 2017
-P1	checked out copy:	C2	Worker:	w1	Fri Jul 14 04:06:52 GMT-06:00 2017
-P1	checked in copy:	C1	Worker:	w1	Fri Jul 14 04:07:10 GMT-06:00 2017
-P1	checked out copy:	C1	Worker:	w1	Fri Jul 14 04:07:29 GMT-06:00 2017
-P1	checked out copy:	C2	Worker:	w1	Fri Jul 14 04:07:34 GMT-06:00 2017
-P1	checked in copy:	C1	Worker:	w1	Fri Jul 14 04:08:00 GMT-06:00 2017
-P1	checked in copy:	C2	Worker:	w1	Fri Jul 14 04:08:03 GMT-06:00 2017
-P1	checked out copy:	C1	Worker:	w1	Fri Jul 14 04:08:46 GMT-06:00 2017
-P1	checked out copy:	C2	Worker:	w1	Fri Jul 14 04:08:50 GMT-06:00 2017
-P1	checked in copy:	C1	Worker:	w1	Fri Jul 14 04:08:56 GMT-06:00 2017
-P1	checked in copy:	C2	Worker:	w1	Fri Jul 14 04:09:00 GMT-06:00 2017
-P1	checked out copy:	C1	Worker:	W1	Fri Jul 14 04:28:47 GMT-06:00 2017
-P1	checked in copy:	C1	Worker:	W1	Fri Jul 14 04:29:04 GMT-06:00 2017
+U3	checked in copy:	C3	Worker:	W1	Fri Jul 14 12:58:12 GMT-06:00 2017
+U3	checked in copy:	C3	Worker:	W1	Fri Jul 14 12:59:38 GMT-06:00 2017
+U3	checked in copy:	C3	Worker:	W1	Fri Jul 14 13:01:08 GMT-06:00 2017
+U3	checked in copy:	C3	Worker:	W1	Fri Jul 14 13:05:15 GMT-06:00 2017
+U3	checked out copy:	C3	Worker:	W1	Fri Jul 14 13:05:15 GMT-06:00 2017
+U3	checked out copy:	C3	Worker:	W1	Fri Jul 14 13:05:15 GMT-06:00 2017

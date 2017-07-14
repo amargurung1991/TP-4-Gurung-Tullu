@@ -52,13 +52,7 @@ public class TRLAppTest {
 		
 	}
 	
-	@Test
-	public void testReturnDate()
-	{
-		TRLAppController T1 = new TRLAppController("P1");
-		String returnDate = T1.returnDate();
-		System.out.println(returnDate);
-	}
+	
 	
 	
 	@Test
@@ -83,5 +77,19 @@ public class TRLAppTest {
 		R1.copyCheckedOut("C3", "U3", "W1");
 	}
 	
+	@Test
+	public void testReturnDate()
+	{
+		TRLAppController T1= new TRLAppController("P1", "W1");
+		System.out.println(T1.getReturnDate());
+	}
+	
+	@Test
+	public void InsertData()
+	{
+		DataHandler H1 = new DataHandler();
+		H1.insertData("A1", "B1", "2017-11-11");
+		System.out.println("success");
+	}
 
 }
