@@ -56,8 +56,7 @@ public class DataHandler {
     	        c.setAutoCommit(false);
 
     	        stmt = c.createStatement();
-    	        String sql = "DELETE FROM PatronCopyInfo" +
-    	        		"WHERE PatronID = '" + patronId +"' and BookId =  '"+ bookID +"';"; 
+    	        String sql = "DELETE FROM PatronCopyInfo WHERE PatronID = '" + patronId +"' and BookId = '"+ bookID +"';"; 
     	        stmt.executeUpdate(sql);
 
     	        stmt.close();

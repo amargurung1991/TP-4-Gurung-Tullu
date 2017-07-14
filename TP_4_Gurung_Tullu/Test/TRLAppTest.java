@@ -91,7 +91,7 @@ public class TRLAppTest {
 		H1.insertData("A1", "B1", "2017-11-11");
 		System.out.println("success");
 	}
-	
+	/*
 	@Test
 	public void RetrieveData()
 	{
@@ -115,7 +115,16 @@ public class TRLAppTest {
 		System.out.println();
 		System.out.println(H1.RetreiveHold("A1"));
 	}
-	
+	*/
+	@Test
+	public void deleteRecord()
+	{
+		DataHandler H1 = new DataHandler();
+		System.out.println();
+		System.out.println();
+		H1.removeData("A1", "B1");
+		System.out.println("success");
+	}
 
 
 }
