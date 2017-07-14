@@ -32,7 +32,7 @@ public void copyCheckedIn(String copyID, String userID, String workerID) {
 	try {
 		String newline = System.getProperty("line.separator");
 		String data = newline + userID + "	checked in copy:	" + copyID + "	Worker:	" + workerID + "	" + cal.getTime().toString();
-		File file = new File("C:\\\\Users\\aguru\\workspace\\TP_3_Gurung_Tullu\\Events\\TRLevent.txt");
+		File file = new File("C:\\\\Users\\aguru\\TP-4-Gurung-Tullu\\TP_4_Gurung_Tullu\\Events\\TRLevent.txt"); 
 
 		// if file doesn't exists, then create it
 		if (!file.exists()) {
