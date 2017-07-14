@@ -57,7 +57,7 @@ public class DataHandler {
 
     	        stmt = c.createStatement();
     	        String sql = "DELETE FROM PatronCopyInfo" +
-    	        		"WHERE PatronID = '" + patronId +"' and BookId =  '"+ bookID +"');"; 
+    	        		"WHERE PatronID = '" + patronId +"' and BookId =  '"+ bookID +"';"; 
     	        stmt.executeUpdate(sql);
 
     	        stmt.close();
@@ -83,7 +83,7 @@ public class DataHandler {
 
 	        stmt = c.createStatement();
 	        String sql = "UPDATE PatronCopyInfo SET Hold = Null " +
-	        		"WHERE PatronID = '" + patronId +"');"; 
+	        		"WHERE PatronID = '" + patronId +"';"; 
 	        stmt.executeUpdate(sql);
 
 	        stmt.close();
@@ -105,8 +105,8 @@ public class DataHandler {
 	        c.setAutoCommit(false);
 
 	        stmt = c.createStatement();
-	        String sql = "UPDATE PatronCopyInfo SET Hold = " + hold +
-	        		"WHERE PatronID = '" + patronId +"');"; 
+	        String sql = "UPDATE PatronCopyInfo SET Hold = '" + hold + "'" +
+	        		"WHERE PatronID = '" + patronId +"';"; 
 	        stmt.executeUpdate(sql);
 
 	        stmt.close();

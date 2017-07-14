@@ -98,5 +98,13 @@ public class TRLAppTest {
 		DataHandler H1 = new DataHandler();
 		System.out.println(H1.RetreiveHold("A1"));
 	}
+	
+	@Test
+	public void addHold()
+	{
+		DataHandler H1 = new DataHandler();
+		H1.addHold("A1", "Hold");
+		System.out.println(H1.RetreiveHold("A1"));
+	}
 
 }
