@@ -2,7 +2,7 @@ import java.sql.*;
 public class DataHandler {
 	 Connection c = null;
      Statement stmt = null;
-     public void insertData(String patronID, String bookId,  Date date)
+     public void insertData(String patronID, String bookId,  String date)
      {
      try {
         Class.forName("org.sqlite.JDBC");
@@ -10,7 +10,7 @@ public class DataHandler {
         c.setAutoCommit(false);
 
         stmt = c.createStatement();
-        String sql = "INSERT INTO PatronInfo (PatronID,BookID,ReturnDate) " +
+        String sql = "INSERT INTO PatronCopyInfo (PatronID,BookID,ReturnDate) " +
                        "VALUES (" + patronID +", "+bookId+", "+ date +");"; 
         stmt.executeUpdate(sql);
 
@@ -32,7 +32,7 @@ public class DataHandler {
         c.setAutoCommit(false);
 
         stmt = c.createStatement();
-        ResultSet rs = stmt.executeQuery( "SELECT Top(1) Hold FROM PatronInfo where PatronID = "  + patronID +";" );
+        ResultSet rs = stmt.executeQuery( "SELECT Top(1) Hold FROM PatronCopyInfo where PatronID = "  + patronID +";" );
        String hold = rs.getString("Hold");
 
         stmt.close();
@@ -54,7 +54,7 @@ public class DataHandler {
     	        c.setAutoCommit(false);
 
     	        stmt = c.createStatement();
-    	        String sql = "DELETE FROM PatronInfo" +
+    	        String sql = "DELETE FROM PatronCopyInfo" +
     	        		"WHERE PatronID = " + patronId +" and BookId =  "+ bookID +");"; 
     	        stmt.executeUpdate(sql);
 
@@ -77,7 +77,7 @@ public class DataHandler {
 	        c.setAutoCommit(false);
 
 	        stmt = c.createStatement();
-	        String sql = "UPDATE PatronInfo SET Hold = Null " +
+	        String sql = "UPDATE PatronCopyInfo SET Hold = Null " +
 	        		"WHERE PatronID = " + patronId +");"; 
 	        stmt.executeUpdate(sql);
 
@@ -100,7 +100,7 @@ public class DataHandler {
 	        c.setAutoCommit(false);
 
 	        stmt = c.createStatement();
-	        String sql = "UPDATE PatronInfo SET Hold = " + hold +
+	        String sql = "UPDATE PatronCopyInfo SET Hold = " + hold +
 	        		"WHERE PatronID = " + patronId +");"; 
 	        stmt.executeUpdate(sql);
 
@@ -114,4 +114,12 @@ public class DataHandler {
 	        return false;
 	     } 
   }
+     
+     public static void main(String[] args) 
+ 	{
+    	
+	
+
+ 	}
+
 }

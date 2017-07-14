@@ -13,10 +13,10 @@ public class CreateTable {
          System.out.println("Opened database successfully");
 
          stmt = c.createStatement();
-         String sql = "CREATE TABLE PatronInfo " +
+         String sql = "CREATE TABLE PatronCopyInfo " +
                         "( PatronID           TEXT    NOT NULL, " + 
                         " BookID           TEXT   NOT NULL, " + 
-                        " ReturnDate		DATE NOT NULL," +
+                        " ReturnDate		TEXT NOT NULL," +
                         " Hold 			varchar(100))"; 
          stmt.executeUpdate(sql);
          stmt.close();
