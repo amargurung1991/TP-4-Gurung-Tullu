@@ -33,7 +33,7 @@ public class DataHandler {
         c.setAutoCommit(false);
 
         stmt = c.createStatement();
-        ResultSet rs = stmt.executeQuery( "SELECT Top(1) Hold FROM PatronCopyInfo where PatronID = '"  + patronID +"';" );
+        ResultSet rs = stmt.executeQuery( "SELECT Hold FROM PatronCopyInfo where PatronID = '"  + patronID +"' LIMIT 1;" );
        String hold = rs.getString("Hold");
 
         stmt.close();

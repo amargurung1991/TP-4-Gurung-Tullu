@@ -91,5 +91,12 @@ public class TRLAppTest {
 		H1.insertData("A1", "B1", "2017-11-11");
 		System.out.println("success");
 	}
+	
+	@Test
+	public void RetrieveData()
+	{
+		DataHandler H1 = new DataHandler();
+		System.out.println(H1.RetreiveHold("A1"));
+	}
 
 }
