@@ -134,6 +134,13 @@ public class TRLAppTest {
 		System.out.println();
 		System.out.println(H1.retrieveReturnDate("P1", "C1"));
 	}
+	
+	@Test
+	public void dynamicPath()
+	{
+		String path = System.getProperty("user.dir");
+		System.out.println(path);
+	}
 
 
 }

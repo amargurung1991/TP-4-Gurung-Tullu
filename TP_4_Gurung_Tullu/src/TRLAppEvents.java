@@ -21,6 +21,7 @@ void copyCheckedOut(String copyID, String userID, String workerID);
 class Responder implements CheckInOutListener{
 
 	private Calendar cal = Calendar.getInstance();
+	private String path = System.getProperty("user.dir");
 	
 @Override
 public void copyCheckedIn(String copyID, String userID, String workerID) {
@@ -32,7 +33,7 @@ public void copyCheckedIn(String copyID, String userID, String workerID) {
 	try {
 		String newline = System.getProperty("line.separator");
 		String data = newline + userID + "	checked in copy:	" + copyID + "	Worker:	" + workerID + "	" + cal.getTime().toString();
-		File file = new File("C:\\\\Users\\aguru\\TP-4-Gurung-Tullu\\TP_4_Gurung_Tullu\\Events\\TRLevent.txt"); 
+		File file = new File(path + "\\Events\\TRLevent.txt"); 
 
 		// if file doesn't exists, then create it
 		if (!file.exists()) {
@@ -78,7 +79,7 @@ public void copyCheckedOut(String copyID, String userID, String workerID) {
 	try {
 		String newline = System.getProperty("line.separator");
 		String data = newline + userID + "	checked out copy:	" + copyID + "	Worker:	" + workerID + "	" + cal.getTime().toString();
-		File file = new File("C:\\\\Users\\aguru\\TP-4-Gurung-Tullu\\TP_4_Gurung_Tullu\\Events\\TRLevent.txt");
+		File file = new File(path + "\\Events\\TRLevent.txt");
 
 		// if file doesn't exists, then create it
 		if (!file.exists()) {
