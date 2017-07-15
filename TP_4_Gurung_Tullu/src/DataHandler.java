@@ -1,4 +1,5 @@
 import java.sql.*;
+import java.util.ArrayList;
 public class DataHandler {
 	 Connection c = null;
      Statement stmt = null;
@@ -143,6 +144,38 @@ public class DataHandler {
 	     } 
   }
      
+     public ArrayList<String> getCopies(String patronID)
+     {
+    	 Connection c = null;
+  	   Statement stmt = null;
+  	   try {
+  	      Class.forName("org.sqlite.JDBC");
+  	      c = DriverManager.getConnection("jdbc:sqlite:LibraryData.db");
+  	      c.setAutoCommit(false);
+  	     
+
+  	      stmt = c.createStatement();
+  	      ResultSet rs = stmt.executeQuery( "SELECT BookID FROM PatronCopyData where PatronID = '"+ patronID +"' ;" );
+  	    ArrayList<String> array = new ArrayList<String>();
+  	 
+  	      while ( rs.next() ) {
+  	    	  
+  	    	 String copies = rs.getString("BookID");
+  	  	      array.add(copies);
+  		       
+  		       
+  		        
+  	      }
+  	      rs.close();
+  	      stmt.close();
+  	      c.close();
+  	      return array;
+  	   } catch ( Exception e ) {
+  	      System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+  	      System.exit(0);
+  	      return null;
+  	   }
+     }
     
      
      public static void main(String[] args) 
@@ -175,7 +208,9 @@ public class DataHandler {
     	      System.exit(0);
     	   }
     	   System.out.println("Operation done successfully");
-	
+    	   DataHandler H = new DataHandler();
+    	   ArrayList<String> result = H.getCopies("P1"); 
+    	   System.out.println(result.toString());
 
  	}
 

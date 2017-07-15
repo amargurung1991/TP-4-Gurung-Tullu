@@ -1,5 +1,6 @@
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -41,14 +42,21 @@ public class TRLAppController
 		return P1;
 	}
 	
-	public Patron checkCopyIn()
+	public ArrayList<String> checkCopyIn()
 	{
-		Patron P1 = LibraryDB.getPatron(this.studentID);
 		DataHandler H1 = new DataHandler();
 		H1.removeData(this.studentID, this.copyID);
 		Responder R1 = new Responder();
 		R1.copyCheckedIn(copyID, this.studentID, this.workerID);
-		return P1;
+		ArrayList<String> copies = H1.getCopies(this.studentID);
+		return copies;
+	}
+	
+	public ArrayList<String> getCopiesCheckedOut()
+	{
+		DataHandler H1 = new DataHandler();
+		ArrayList<String> copies = H1.getCopies(this.studentID);
+		return copies;
 	}
 	
 	

@@ -1,0 +1,4 @@
+
+P1	checked out copy:	C1	Worker:	W1	Fri Jul 14 21:55:29 GMT-06:00 2017
+P1	checked out copy:	C2	Worker:	W1	Fri Jul 14 21:55:35 GMT-06:00 2017
+P1	checked in copy:	C1	Worker:	W1	Fri Jul 14 22:10:34 GMT-06:00 2017

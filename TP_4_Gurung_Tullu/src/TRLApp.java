@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner; 
 public class TRLApp {
 
@@ -64,15 +65,17 @@ public class TRLApp {
 	private static void checkCopyIn(Scanner scanner, TRLAppController T1) {
 		for(int i=0; i<10; i++)// checking in more than 1 books. Loops up to 10 with the understanding that no student will check out more than 10 books at a time. 
 		{	
+			ArrayList<String> allCopies = T1.getCopiesCheckedOut();
+			System.out.println("Copies checked out: " + allCopies.toString());
 			System.out.println("Please enter copy ID: options(C1, C2, C3)");
 			String copyID = scanner.next();
 			T1.setCopyID(copyID);
-			Patron P = T1.checkCopyIn();
+			ArrayList<String> copies = T1.checkCopyIn();
 			System.out.println("Please enter 1 to check out another copy and 2 to exit");//whether to exit or check more copies out
 			int option = scanner.nextInt();
 			if(option == 2)
 			{	
-				System.out.println(P);
+				System.out.println("Copies checked out: " + copies.toString());
 				break;
 				
 			}
