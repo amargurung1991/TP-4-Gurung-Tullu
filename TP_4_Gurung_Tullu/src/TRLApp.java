@@ -67,6 +67,13 @@ public class TRLApp {
 		{	
 			ArrayList<String> allCopies = T1.getCopiesCheckedOut();
 			System.out.println("Copies checked out: " + allCopies.toString());
+			if(allCopies.isEmpty())
+			{
+				System.out.println("No Copies checked out.");
+				break;
+			}
+			else
+			{
 			System.out.println("Please enter copy ID: options(C1, C2, C3)");
 			String copyID = scanner.next();
 			T1.setCopyID(copyID);
@@ -78,6 +85,7 @@ public class TRLApp {
 				System.out.println("Copies checked out: " + copies.toString());
 				break;
 				
+			}
 			}
 		}
 	}

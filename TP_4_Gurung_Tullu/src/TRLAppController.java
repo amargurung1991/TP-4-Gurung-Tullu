@@ -9,9 +9,12 @@ public class TRLAppController
 	private String studentID;
 	private String copyID;
 	private String workerID;
-
+	private String hold;
 	
-	
+	public void setHold(String hold)
+	{
+		this.hold = hold;
+	}
 	public void setCopyID(String copyId)
 	{
 		this.copyID = copyId;
@@ -57,6 +60,22 @@ public class TRLAppController
 		DataHandler H1 = new DataHandler();
 		ArrayList<String> copies = H1.getCopies(this.studentID);
 		return copies;
+	}
+	
+	public void addHolds()
+	{
+		DataHandler H1 = new DataHandler();
+		H1.addHold(this.studentID, this.hold);
+		Responder R1 = new Responder();
+		R1.addHold(studentID, workerID, hold);
+	}
+	
+	public void removeHold()
+	{
+		DataHandler H1 = new DataHandler();
+		H1.deleteHold(this.studentID);
+		Responder R1 = new Responder();
+		R1.removeHold(studentID, workerID);
 	}
 	
 	

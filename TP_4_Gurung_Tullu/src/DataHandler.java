@@ -208,9 +208,8 @@ public class DataHandler {
     	      System.exit(0);
     	   }
     	   System.out.println("Operation done successfully");
-    	   DataHandler H = new DataHandler();
-    	   ArrayList<String> result = H.getCopies("P1"); 
-    	   System.out.println(result.toString());
+    	 
+    	   
 
  	}
 
