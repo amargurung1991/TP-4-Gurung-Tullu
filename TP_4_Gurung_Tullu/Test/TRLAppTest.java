@@ -42,13 +42,13 @@ public class TRLAppTest {
 		//CheckingOut
 		P1.checkCopyOut(C1);
 		assertEquals(P1, C1.getOutTo());
-		System.out.println(P1);
+		
 		
 		
 		//CheckingIn
 		P1.checkCopyIn(C1);
 		assertEquals(null,C1.getOutTo());
-		System.out.println(P1);
+		
 		
 	}
 	
@@ -81,65 +81,54 @@ public class TRLAppTest {
 	public void testReturnDate()
 	{
 		TRLAppController T1= new TRLAppController("P1", "W1");
-		System.out.println(T1.getReturnDate());
+		assertEquals("2017-11-12" ,T1.getReturnDate());
 	}
-	/*
+	
 	@Test
 	public void InsertData()
 	{
 		DataHandler H1 = new DataHandler();
 		H1.insertData("A1", "B1", "2017-11-11");
-		System.out.println("success");
+		
 	}
 	
 	@Test
 	public void retrieveData()
 	{
 		DataHandler H1 = new DataHandler();
-		System.out.println(H1.RetreiveHold("A1"));
+		
+		assertEquals("", H1.retreiveHold("P1"));
 	}
 	
-	@Test
+	/*@Test
 	public void addHold()
 	{
 		DataHandler H1 = new DataHandler();
 		H1.addHold("A1", "Hold");
-		System.out.println(H1.RetreiveHold("A1"));
-	}
+		assertEquals("Hold", H1.retreiveHold("A1"));
+	}*/
 	
 	@Test
 	public void deleteHold()
 	{
 		DataHandler H1 = new DataHandler();
 		H1.deleteHold("A1");
-		System.out.println();
-		System.out.println(H1.RetreiveHold("A1"));
+		assertEquals("", H1.retreiveHold("A1"));
 	}
 	
-	@Test
-	public void deleteRecord()
-	{
-		DataHandler H1 = new DataHandler();
-		System.out.println();
-		System.out.println();
-		H1.removeData("A1", "B1");
-		System.out.println("success");
-	}
-	*/
+	
 	@Test
 	public void getDate()
 	{
 		DataHandler H1 = new DataHandler();
-		System.out.println();
-		System.out.println();
-		System.out.println(H1.retrieveReturnDate("P1", "C1"));
+		assertEquals("2017-11-11",H1.retrieveReturnDate("P1", "C2"));
 	}
 	
 	@Test
 	public void dynamicPath()
 	{
 		String path = System.getProperty("user.dir");
-		System.out.println(path);
+		assertEquals("C:\\Users\\aguru\\TP-4-Gurung-Tullu\\TP_4_Gurung_Tullu",path );
 	}
 
 
