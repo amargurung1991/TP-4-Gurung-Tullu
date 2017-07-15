@@ -29,3 +29,8 @@ Worker:	W1	added hold:	OverDue		StudentID =	P1	Sat Jul 15 10:25:16 GMT-06:00 201
 U3	checked out copy:	C3	Worker:	W1	Sat Jul 15 10:25:16 GMT-06:00 2017
 Worker:	W1	removed hold:	P1	Sat Jul 15 10:25:16 GMT-06:00 2017
 U3	checked out copy:	C3	Worker:	W1	Sat Jul 15 10:25:16 GMT-06:00 2017
+U3	checked in copy:	C3	Worker:	W1	Sat Jul 15 10:34:59 GMT-06:00 2017
+Worker:	W1	added hold:	OverDue		StudentID =	P1	Sat Jul 15 10:34:59 GMT-06:00 2017
+U3	checked out copy:	C3	Worker:	W1	Sat Jul 15 10:34:59 GMT-06:00 2017
+Worker:	W1	removed hold:	P1	Sat Jul 15 10:34:59 GMT-06:00 2017
+U3	checked out copy:	C3	Worker:	W1	Sat Jul 15 10:34:59 GMT-06:00 2017
