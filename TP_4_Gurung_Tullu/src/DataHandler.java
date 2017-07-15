@@ -34,8 +34,14 @@ public class DataHandler {
 
         stmt = c.createStatement();
         ResultSet rs = stmt.executeQuery( "SELECT Hold FROM PatronCopyInfo where PatronID = '"  + patronID +"' LIMIT 1;" );
-       String hold = rs.getString("Hold");
-
+        String hold;
+       try {
+    	   hold = rs.getString("Hold");
+       }
+       catch (Exception ex)
+       {
+    	  hold = "";
+       }
         stmt.close();
         c.commit();
         c.close();
@@ -103,7 +109,7 @@ public class DataHandler {
 	        c.setAutoCommit(false);
 
 	        stmt = c.createStatement();
-	        String sql = "UPDATE PatronCopyInfo SET Hold = Null " +
+	        String sql = "UPDATE PatronCopyInfo SET Hold = null " +
 	        		"WHERE PatronID = '" + patronId +"';"; 
 	        stmt.executeUpdate(sql);
 

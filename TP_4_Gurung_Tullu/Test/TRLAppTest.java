@@ -8,10 +8,10 @@ public class TRLAppTest {
 
 	@Test
 	public void testPatron() {
-		Patron P1 = new Patron("A1", "Amar", "");
+		Patron P1 = new Patron("A1", "Amar");
 		assertEquals("Amar",P1.getName());
 		assertEquals("A1", P1.getId());
-		assertEquals("", P1.getHold());
+		
 		
 	}
 	
@@ -26,7 +26,7 @@ public class TRLAppTest {
 	@Test
 	public void testCopyCheckOut()
 	{
-		Patron P1 = new Patron("A1", "Amar", "");
+		Patron P1 = new Patron("A1", "Amar");
 		Copy C1 = new Copy("C1", "The Deathly Hallows");
 		C1.setOutTo(P1);
 		assertEquals(P1, C1.getOutTo());
@@ -36,7 +36,7 @@ public class TRLAppTest {
 	@Test
 	public void testCopyCheckInOut()
 	{
-		Patron P1 = new Patron("A1", "Amar", "");
+		Patron P1 = new Patron("A1", "Amar");
 		Copy C1 = new Copy("C1", "The Deathly Hallows");
 		
 		//CheckingOut

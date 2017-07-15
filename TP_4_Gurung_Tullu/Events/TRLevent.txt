@@ -1,4 +1,3 @@
 
-U3	checked in copy:	C3	Worker:	W1	Fri Jul 14 18:35:50 GMT-06:00 2017
-U3	checked out copy:	C3	Worker:	W1	Fri Jul 14 18:35:50 GMT-06:00 2017
-U3	checked out copy:	C3	Worker:	W1	Fri Jul 14 18:35:50 GMT-06:00 2017
+P1	checked in copy:	C1	Worker:	W1	Fri Jul 14 19:29:53 GMT-06:00 2017
+P1	checked in copy:	C2	Worker:	W1	Fri Jul 14 19:29:57 GMT-06:00 2017

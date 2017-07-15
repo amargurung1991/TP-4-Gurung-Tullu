@@ -52,15 +52,6 @@ public class TRLAppController
 	}
 	
 	
-	
-	public Patron CheckOutComplete()
-	{
-		
-					return checkCopyOut();
-					
-			
-	}
-	
 	public String getReturnDate()
 	{
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
