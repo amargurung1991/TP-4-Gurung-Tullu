@@ -16,12 +16,30 @@ public class TRLAppTest {
 	}
 	
 	@Test
+	public void testPatron1() {
+		Patron P1 = new Patron("A2", "Tullu");
+		assertEquals("Tullu",P1.getName());
+		assertEquals("A2", P1.getId());
+		
+		
+	}
+	
+	@Test
 	public void testCopy()
 	{
 		Copy C1 = new Copy("C1", "The Deathly Hallows");
 		assertEquals("C1", C1.getCopyID());
 		assertEquals("The Deathly Hallows",C1.getTitle());
 	}
+	
+	@Test
+	public void testCopy1()
+	{
+		Copy C1 = new Copy("C2", "The Deathly Hallows");
+		assertEquals("C2", C1.getCopyID());
+		assertEquals("The Deathly Hallows",C1.getTitle());
+	}
+	
 	
 	@Test
 	public void testCopyCheckOut()
@@ -32,6 +50,15 @@ public class TRLAppTest {
 		assertEquals(P1, C1.getOutTo());
 	}
 	
+	
+	@Test
+	public void testCopyCheckOut1()
+	{
+		Patron P1 = new Patron("A2", "Tullu");
+		Copy C1 = new Copy("C2", "The Deathly Hallows");
+		C1.setOutTo(P1);
+		assertEquals(P1, C1.getOutTo());
+	}
 	
 	@Test
 	public void testCopyCheckInOut()
@@ -68,6 +95,22 @@ public class TRLAppTest {
 		Responder R1 = new Responder();
 		R1.copyCheckedOut("C3", "U3", "W1");
 	}
+	
+	@Test
+	public void addHold()
+	{
+		Responder R1 = new Responder();
+		R1.addHold("P1", "W1", "OverDue");
+	}
+	
+	@Test
+	public void removeHold()
+	{
+		Responder R1 = new Responder();
+		R1.removeHold("P1", "W1");
+	}
+	
+	
 	
 
 	@Test
