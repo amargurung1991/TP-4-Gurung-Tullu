@@ -43,7 +43,9 @@ public class TRLApp {
 			System.out.println("For copy id you have options: C1, C2 and C3.");
 			System.out.println("Follow the steps and when done the screen will print out the information on books still checked out by the patron or any holds of the patron.");
 			System.out.println("To check for events, check for file TRLevent under folder Events.");
+			System.out.println("Run TRLHoldApp to add and remove holds.");
 			System.out.println("Restart the application and Good Luck.");
+			
 		}
 		
 		
@@ -78,7 +80,7 @@ public class TRLApp {
 			String copyID = scanner.next();
 			T1.setCopyID(copyID);
 			ArrayList<String> copies = T1.checkCopyIn();
-			System.out.println("Please enter 1 to check out another copy and 2 to exit");//whether to exit or check more copies out
+			System.out.println("Please enter 1 to check in another copy and 2 to exit");//whether to exit or check more copies out
 			int option = scanner.nextInt();
 			if(option == 2)
 			{	
@@ -105,7 +107,7 @@ public class TRLApp {
 	private static void checkoutCopies(Scanner scanner, TRLAppController T1) {
 		for(int i=0; i<10; i++)// checking out more than 1 books. Loops up to 10 with the understanding that no student will check out more than 10 books at a time. 
 		{	
-			System.out.println("Please enter copy ID:");
+			System.out.println("Please enter copy ID:options(C1, C2, C3)");
 			String copyID = scanner.next();
 			T1.setCopyID(copyID);
 			Patron P = T1.checkCopyOut();
