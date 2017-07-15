@@ -6,12 +6,12 @@ public class DataHandler {
      {
      try {
         Class.forName("org.sqlite.JDBC");
-        c = DriverManager.getConnection("jdbc:sqlite:LibraryDataHouse.db");
+        c = DriverManager.getConnection("jdbc:sqlite:LibraryData.db");
         c.setAutoCommit(false);
-
+        String hold = "none";
         stmt = c.createStatement();
-        String sql = "INSERT INTO PatronCopyInfo (PatronID,BookID,ReturnDate) " +
-                       "VALUES ('" + patronID +"', '"+bookId+"', '"+ date +"');"; 
+        String sql = "INSERT INTO PatronCopyData (PatronID, BookID, ReturnDate, Hold) " +
+                       "VALUES ('" + patronID +"', '"+bookId+"', '"+ date +"', '"+ hold +"');"; 
         stmt.executeUpdate(sql);
 
         stmt.close();
@@ -19,7 +19,7 @@ public class DataHandler {
         c.close();
      } catch ( Exception e )
      {
-    	 System.out.println(e.toString());
+    	System.out.println(e.toString());
         System.exit(0);
      }
      }
@@ -29,27 +29,23 @@ public class DataHandler {
      {
      try {
         Class.forName("org.sqlite.JDBC");
-        c = DriverManager.getConnection("jdbc:sqlite:LibraryDataHouse.db");
+        c = DriverManager.getConnection("jdbc:sqlite:LibraryData.db");
         c.setAutoCommit(false);
 
         stmt = c.createStatement();
-        ResultSet rs = stmt.executeQuery( "SELECT Hold FROM PatronCopyInfo where PatronID = '"  + patronID +"' LIMIT 1;" );
+        ResultSet rs = stmt.executeQuery( "SELECT Hold FROM PatronCopyData(nolock) where PatronID = '"  + patronID +"' LIMIT 1;" );
         String hold;
-       try {
+      
     	   hold = rs.getString("Hold");
-       }
-       catch (Exception ex)
-       {
-    	  hold = "";
-       }
+     
         stmt.close();
         c.commit();
         c.close();
         return hold;
      } catch ( Exception e ) {
        
-        System.out.println(e.toString());
-        return null;
+        //System.out.println(e.toString());
+        return "";
      }
      }
      
@@ -57,11 +53,11 @@ public class DataHandler {
      {
      try {
         Class.forName("org.sqlite.JDBC");
-        c = DriverManager.getConnection("jdbc:sqlite:LibraryDataHouse.db");
+        c = DriverManager.getConnection("jdbc:sqlite:LibraryData.db");
         c.setAutoCommit(false);
 
         stmt = c.createStatement();
-        ResultSet rs = stmt.executeQuery( "SELECT ReturnDate FROM PatronCopyInfo where PatronID = '"  + patronID +"' and BookID = '"+ copyID +"';" );
+        ResultSet rs = stmt.executeQuery( "SELECT ReturnDate FROM PatronCopyData where PatronID = '"  + patronID +"' and BookID = '"+ copyID +"';" );
        String date = rs.getString("ReturnDate");
 
         stmt.close();
@@ -70,7 +66,7 @@ public class DataHandler {
         return date;
      } catch ( Exception e ) {
        
-        System.out.println(e.toString());
+        //System.out.println(e.toString());
         return null;
      }
 	
@@ -80,11 +76,11 @@ public class DataHandler {
      {
     	 try {
     	        Class.forName("org.sqlite.JDBC");
-    	        c = DriverManager.getConnection("jdbc:sqlite:LibraryDataHouse.db");
+    	        c = DriverManager.getConnection("jdbc:sqlite:LibraryData.db");
     	        c.setAutoCommit(false);
 
     	        stmt = c.createStatement();
-    	        String sql = "DELETE FROM PatronCopyInfo WHERE PatronID = '" + patronId +"' and BookId = '"+ bookID +"';"; 
+    	        String sql = "DELETE FROM PatronCopyData WHERE PatronID = '" + patronId +"' and BookId = '"+ bookID +"';"; 
     	        stmt.executeUpdate(sql);
 
     	        stmt.close();
@@ -93,7 +89,7 @@ public class DataHandler {
     	        return true;
     	     } catch ( Exception e )
     	     {
-    	    	 System.out.println(e.toString());
+    	    	 //System.out.println(e.toString());
     	    
     	    	 return false;
     	        
@@ -105,11 +101,11 @@ public class DataHandler {
      {
      try {
 	        Class.forName("org.sqlite.JDBC");
-	        c = DriverManager.getConnection("jdbc:sqlite:LibraryDataHouse.db");
+	        c = DriverManager.getConnection("jdbc:sqlite:LibraryData.db");
 	        c.setAutoCommit(false);
 
 	        stmt = c.createStatement();
-	        String sql = "UPDATE PatronCopyInfo SET Hold = null " +
+	        String sql = "UPDATE PatronCopyData SET Hold = '' " +
 	        		"WHERE PatronID = '" + patronId +"';"; 
 	        stmt.executeUpdate(sql);
 
@@ -119,7 +115,7 @@ public class DataHandler {
 	        return true;
 	     } catch ( Exception e )
 	     {
-	    	 System.out.println(e.toString());
+	    	 //System.out.println(e.toString());
 	        return false;
 	     } 
      }
@@ -128,11 +124,11 @@ public class DataHandler {
      {
     	 try {
 	        Class.forName("org.sqlite.JDBC");
-	        c = DriverManager.getConnection("jdbc:sqlite:LibraryDataHouse.db");
+	        c = DriverManager.getConnection("jdbc:sqlite:LibraryData.db");
 	        c.setAutoCommit(false);
 
 	        stmt = c.createStatement();
-	        String sql = "UPDATE PatronCopyInfo SET Hold = '" + hold + "'" +
+	        String sql = "UPDATE PatronCopyData SET Hold = '" + hold + "'" +
 	        		"WHERE PatronID = '" + patronId +"';"; 
 	        stmt.executeUpdate(sql);
 
@@ -142,14 +138,43 @@ public class DataHandler {
 	        return true;
 	     } catch ( Exception e )
 	     {
-	    	 System.out.println(e.toString());
+	    	 //System.out.println(e.toString());
 	        return false;
 	     } 
   }
      
+    
+     
      public static void main(String[] args) 
  	{
-    	
+    	 Connection c = null;
+    	   Statement stmt = null;
+    	   try {
+    	      Class.forName("org.sqlite.JDBC");
+    	      c = DriverManager.getConnection("jdbc:sqlite:LibraryData.db");
+    	      c.setAutoCommit(false);
+    	      System.out.println("Opened database successfully");
+
+    	      stmt = c.createStatement();
+    	      ResultSet rs = stmt.executeQuery( "SELECT * FROM PatronCopyData;" );
+    	      
+    	      while ( rs.next() ) {
+    	    	  String patronId = rs.getString("PatronID");
+    		         String copyId = rs.getString("BookID");
+    		         String returnDate  = rs.getString("ReturnDate");
+    		         String hold = rs.getString("Hold");
+    		       
+    		         
+    		         System.out.println( "StudentID = " + patronId + " CopyId = " + copyId + " ReturnDate = " + returnDate + " Hold = " + hold);
+    	      }
+    	      rs.close();
+    	      stmt.close();
+    	      c.close();
+    	   } catch ( Exception e ) {
+    	      System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+    	      System.exit(0);
+    	   }
+    	   System.out.println("Operation done successfully");
 	
 
  	}

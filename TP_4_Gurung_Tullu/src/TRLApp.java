@@ -50,7 +50,7 @@ public class TRLApp {
 	}
 
 	private static void checkHoldIn(Scanner scanner, TRLAppController T1) {
-		if(T1.checkHold().equals(""))// check for Hold in the database
+		if(T1.checkHold().equals("none") || T1.checkHold().equals(""))// check for Hold in the database
 		{
 			
 			
@@ -80,7 +80,7 @@ public class TRLApp {
 	}
 
 	private static void checkHoldOut(Scanner scanner, TRLAppController T1) {
-		if(T1.checkHold().equals(""))// check for Hold in the database
+		if(T1.checkHold().equals("none") || T1.checkHold().equals(""))// check for Hold in the database
 		{
 			
 			

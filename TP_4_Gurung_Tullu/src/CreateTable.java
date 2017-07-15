@@ -9,15 +9,15 @@ public class CreateTable {
       
       try {
          Class.forName("org.sqlite.JDBC");
-         c = DriverManager.getConnection("jdbc:sqlite:LibraryDataHouse.db");
+         c = DriverManager.getConnection("jdbc:sqlite:LibraryData.db");
          System.out.println("Opened database successfully");
 
          stmt = c.createStatement();
-         String sql = "CREATE TABLE PatronCopyInfo " +
+         String sql = "CREATE TABLE PatronCopyData " +
                         "( PatronID           TEXT    NOT NULL, " + 
                         " BookID           TEXT   NOT NULL, " + 
                         " ReturnDate		TEXT NOT NULL," +
-                        " Hold 			varchar(100))"; 
+                        " Hold 			TEXT NOT NULL)"; 
          stmt.executeUpdate(sql);
          stmt.close();
          c.close();

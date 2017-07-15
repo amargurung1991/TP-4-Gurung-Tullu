@@ -52,6 +52,16 @@ public class TRLAppController
 	}
 	
 	
+	
+	
+
+	public static void main(String[] args) 
+	{
+	
+		
+
+	}
+	
 	public String getReturnDate()
 	{
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -63,13 +73,4 @@ public class TRLAppController
 				return  returnDate;
 	}
 	
-	
-
-	public static void main(String[] args) 
-	{
-	
-		
-
-	}
-
 }
