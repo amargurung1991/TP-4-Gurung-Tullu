@@ -32,7 +32,7 @@ public class TRLApp {
 			
 		}
 		
-		
+		//Helper if the user needs
 		else 
 		{
 			System.out.println();
@@ -63,6 +63,19 @@ public class TRLApp {
 		}
 		else System.out.println("Patron has a hold: " + T1.checkHold());// Print the hold 
 	}
+	
+
+	private static void checkHoldOut(Scanner scanner, TRLAppController T1) {
+		if(T1.checkHold().equals("none") || T1.checkHold().equals(""))// check for Hold in the database
+		{
+			
+			
+			checkoutCopies(scanner, T1);
+			
+		}
+		else System.out.println("Patron has a hold: " + T1.checkHold());// Print the hold 
+		
+	}
 
 	private static void checkCopyIn(Scanner scanner, TRLAppController T1) {
 		for(int i=0; i<10; i++)// checking in more than 1 books. Loops up to 10 with the understanding that no student will check out more than 10 books at a time. 
@@ -76,7 +89,7 @@ public class TRLApp {
 			}
 			else
 			{
-			System.out.println("Please enter copy ID: options(C1, C2, C3)");
+			System.out.println("Please enter copy ID:");
 			String copyID = scanner.next();
 			T1.setCopyID(copyID);
 			ArrayList<String> copies = T1.checkCopyIn();
@@ -92,22 +105,14 @@ public class TRLApp {
 		}
 	}
 
-	private static void checkHoldOut(Scanner scanner, TRLAppController T1) {
-		if(T1.checkHold().equals("none") || T1.checkHold().equals(""))// check for Hold in the database
-		{
-			
-			
-			checkoutCopies(scanner, T1);
-			
-		}
-		else System.out.println("Patron has a hold: " + T1.checkHold());// Print the hold 
-		
-	}
 
 	private static void checkoutCopies(Scanner scanner, TRLAppController T1) {
 		for(int i=0; i<10; i++)// checking out more than 1 books. Loops up to 10 with the understanding that no student will check out more than 10 books at a time. 
 		{	
-			System.out.println("Please enter copy ID:options(C1, C2, C3)");
+			System.out.println("Patron has no hold.");
+			ArrayList<String> allCopies = T1.getCopiesCheckedOut();
+			System.out.println("Copies checked out: " + allCopies.toString());
+			System.out.println("Please enter copy ID to check out:options(C1, C2, C3)");
 			String copyID = scanner.next();
 			T1.setCopyID(copyID);
 			Patron P = T1.checkCopyOut();

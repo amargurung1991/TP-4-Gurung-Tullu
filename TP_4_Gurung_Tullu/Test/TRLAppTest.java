@@ -25,6 +25,15 @@ public class TRLAppTest {
 	}
 	
 	@Test
+	public void testPatron2() {
+		Patron P1 = new Patron("A3", "Eric");
+		assertEquals("Eric",P1.getName());
+		assertEquals("A3", P1.getId());
+		
+		
+	}
+	
+	@Test
 	public void testCopy()
 	{
 		Copy C1 = new Copy("C1", "The Deathly Hallows");
@@ -90,10 +99,24 @@ public class TRLAppTest {
 	}
 	
 	@Test
+	public void testEventCheckIn1()
+	{
+		Responder R1 = new Responder();
+		R1.copyCheckedIn("C4", "U4", "W4");
+	}
+	
+	@Test
 	public void testEventCheckOut()
 	{
 		Responder R1 = new Responder();
 		R1.copyCheckedOut("C3", "U3", "W1");
+	}
+	
+	@Test
+	public void testEventCheckOut2()
+	{
+		Responder R1 = new Responder();
+		R1.copyCheckedOut("C4", "U4", "W4");
 	}
 	
 	@Test

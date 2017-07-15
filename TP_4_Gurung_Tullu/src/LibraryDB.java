@@ -3,8 +3,8 @@ import java.util.Map;
 
 public class LibraryDB 
 {
-	private static Map<String,Patron> patronStore;
-	private static Map<String,Copy> copyStore;
+	private static Map<String,Patron> patronStore; // Hold all the patron information
+	private static Map<String,Copy> copyStore;// Hold all the copy information
 	
 	static // the following runs once when class is loaded: "static initializer"
 	{
@@ -34,8 +34,7 @@ public class LibraryDB
 	
 	public static void main(String[] args)
 	{
-		// TODO Auto-generated method stub
-
+		
 	}
 	
 }

@@ -1,3 +1,33 @@
 
 P1	checked out copy:	C1	Worker:	W1W	Sat Jul 15 11:17:59 GMT-06:00 2017
 P1	checked in copy:	C1	Worker:	W1	Sat Jul 15 11:18:19 GMT-06:00 2017
+U3	checked in copy:	C3	Worker:	W1	Sat Jul 15 12:12:44 GMT-06:00 2017
+Worker:	W1	added hold:	OverDue		StudentID =	P1	Sat Jul 15 12:12:44 GMT-06:00 2017
+U3	checked out copy:	C3	Worker:	W1	Sat Jul 15 12:12:44 GMT-06:00 2017
+U4	checked out copy:	C4	Worker:	W4	Sat Jul 15 12:12:44 GMT-06:00 2017
+Worker:	W1	removed hold:	P1	Sat Jul 15 12:12:44 GMT-06:00 2017
+U4	checked in copy:	C4	Worker:	W4	Sat Jul 15 12:12:44 GMT-06:00 2017
+U3	checked out copy:	C3	Worker:	W1	Sat Jul 15 12:12:44 GMT-06:00 2017
+P1	checked out copy:	C1	Worker:	W1	Sat Jul 15 12:39:37 GMT-06:00 2017
+P1	checked in copy:	C1	Worker:	W1	Sat Jul 15 12:40:21 GMT-06:00 2017
+P1	checked out copy:	C1	Worker:	W1	Sat Jul 15 12:49:46 GMT-06:00 2017
+P1	checked in copy:	C1	Worker:	W1	Sat Jul 15 12:50:31 GMT-06:00 2017
+P1	checked out copy:	C1	Worker:	W1	Sat Jul 15 13:01:21 GMT-06:00 2017
+P1	checked in copy:	C1	Worker:	W1	Sat Jul 15 13:02:01 GMT-06:00 2017
+P1	checked out copy:	C1	Worker:	W1	Sat Jul 15 13:26:24 GMT-06:00 2017
+P1	checked in copy:	C1	Worker:	W1	Sat Jul 15 13:27:30 GMT-06:00 2017
+Worker:	W1	added hold:	overdue		StudentID =	A1	Sat Jul 15 13:28:50 GMT-06:00 2017
+U3	checked in copy:	C3	Worker:	W1	Sat Jul 15 13:29:18 GMT-06:00 2017
+Worker:	W1	added hold:	OverDue		StudentID =	P1	Sat Jul 15 13:29:18 GMT-06:00 2017
+U3	checked out copy:	C3	Worker:	W1	Sat Jul 15 13:29:18 GMT-06:00 2017
+U4	checked out copy:	C4	Worker:	W4	Sat Jul 15 13:29:18 GMT-06:00 2017
+Worker:	W1	removed hold:	P1	Sat Jul 15 13:29:18 GMT-06:00 2017
+U4	checked in copy:	C4	Worker:	W4	Sat Jul 15 13:29:18 GMT-06:00 2017
+U3	checked out copy:	C3	Worker:	W1	Sat Jul 15 13:29:18 GMT-06:00 2017
+U3	checked in copy:	C3	Worker:	W1	Sat Jul 15 14:42:18 GMT-06:00 2017
+Worker:	W1	added hold:	OverDue		StudentID =	P1	Sat Jul 15 14:42:18 GMT-06:00 2017
+U3	checked out copy:	C3	Worker:	W1	Sat Jul 15 14:42:18 GMT-06:00 2017
+U4	checked out copy:	C4	Worker:	W4	Sat Jul 15 14:42:18 GMT-06:00 2017
+Worker:	W1	removed hold:	P1	Sat Jul 15 14:42:18 GMT-06:00 2017
+U4	checked in copy:	C4	Worker:	W4	Sat Jul 15 14:42:18 GMT-06:00 2017
+U3	checked out copy:	C3	Worker:	W1	Sat Jul 15 14:42:18 GMT-06:00 2017

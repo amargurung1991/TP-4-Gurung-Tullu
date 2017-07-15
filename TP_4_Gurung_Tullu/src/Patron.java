@@ -63,7 +63,7 @@ import java.util.Calendar;
 		@Override
 		public boolean equals(Object o)
 		{
-			// two are equals iff same patron ID
+			// two are equals if same patron ID
 			if (this == o) {
 	            return true;
 	        } else if (o == null) {
@@ -82,7 +82,7 @@ import java.util.Calendar;
 
 		public String toString()
 		{
-			// finish this: return basic Patron info as String
+			
 			
 			return "Name: " + this.name + "\r" +"ID: " + this.patronID + "\r" + "Copy checked Out: " + this.copiesOut.toString();
 		}

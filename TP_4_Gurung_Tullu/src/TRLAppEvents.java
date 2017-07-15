@@ -9,7 +9,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Calendar;
 
-//An interface to be implemented by check in and out events
+//An interface to be implemented by check in and out and adding and removing hold events
 interface CheckInOutListener {
 void copyCheckedIn(String copyID, String userID, String workerID);
 void copyCheckedOut(String copyID, String userID, String workerID);
@@ -33,7 +33,7 @@ public void copyCheckedIn(String copyID, String userID, String workerID) {
 	FileWriter fw = null;
 
 	try {
-		String newline = System.getProperty("line.separator");
+		String newline = System.getProperty("line.separator"); //newline helps to create newline between every new events
 		String data = newline + userID + "	checked in copy:	" + copyID + "	Worker:	" + workerID + "	" + cal.getTime().toString();
 		File file = new File(path + "\\Events\\TRLevent.txt"); 
 

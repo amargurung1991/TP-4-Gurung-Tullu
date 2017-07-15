@@ -14,7 +14,7 @@ public class Copy
 		
 	}
 
-// generate getters and setters using Eclipse Source menu
+
 
 	public String toString()
 	{
@@ -40,12 +40,12 @@ public class Copy
 		return outTo;
 	}
 
-	public void setOutTo(Patron outTo) {
+	public void setOutTo(Patron outTo) {      //set the patron to the copy it checked out
 		this.outTo = outTo;
 	}
 
 	@Override
-	public boolean equals(Object o)
+	public boolean equals(Object o)//Check if the objects are same
 	{
 		if (this == o) {
 			            return true;

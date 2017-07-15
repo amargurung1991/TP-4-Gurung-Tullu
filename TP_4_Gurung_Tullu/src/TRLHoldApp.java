@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class TRLHoldApp {
-
+	//Add or remove holds to different Patrons
 	public static void main(String[] args) {
 	
 	Scanner scanner = new Scanner(System.in);	
@@ -13,7 +13,7 @@ public class TRLHoldApp {
 	String studentID = scanner.next();
 	TRLAppController T1 = new TRLAppController(studentID, workerID);
 	
-	if(task == 1)
+	if(task == 1)//adding hold
 	{
 		System.out.println("Please enter the hold:(option: overdue)");
 		String hold = scanner.next();

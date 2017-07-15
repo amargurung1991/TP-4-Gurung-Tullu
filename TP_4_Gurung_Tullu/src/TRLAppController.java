@@ -55,7 +55,7 @@ public class TRLAppController
 		return copies;
 	}
 	
-	public ArrayList<String> getCopiesCheckedOut()
+	public ArrayList<String> getCopiesCheckedOut() //get the copies checked out by the patron
 	{
 		DataHandler H1 = new DataHandler();
 		ArrayList<String> copies = H1.getCopies(this.studentID);
@@ -70,7 +70,7 @@ public class TRLAppController
 		R1.addHold(studentID, workerID, hold);
 	}
 	
-	public void removeHold()
+	public void removeHold() 
 	{
 		DataHandler H1 = new DataHandler();
 		H1.deleteHold(this.studentID);

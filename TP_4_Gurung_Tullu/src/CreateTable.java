@@ -1,6 +1,6 @@
 
 import java.sql.*;
-
+//Create the database and the table
 public class CreateTable {
 
    public static void main( String args[] ) {

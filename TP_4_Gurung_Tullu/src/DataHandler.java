@@ -20,7 +20,7 @@ public class DataHandler {
         c.close();
      } catch ( Exception e )
      {
-    	System.out.println(e.toString());
+    	
         System.exit(0);
      }
      }
@@ -45,7 +45,7 @@ public class DataHandler {
         return hold;
      } catch ( Exception e ) {
        
-        //System.out.println(e.toString());
+       
         return "";
      }
      }
@@ -67,13 +67,13 @@ public class DataHandler {
         return date;
      } catch ( Exception e ) {
        
-        //System.out.println(e.toString());
+       
         return null;
      }
 	
      }
      
-     public boolean removeData(String patronId , String bookID)
+     public boolean removeData(String patronId , String bookID)//Checkout the book and remove records from the records
      {
     	 try {
     	        Class.forName("org.sqlite.JDBC");
@@ -90,7 +90,7 @@ public class DataHandler {
     	        return true;
     	     } catch ( Exception e )
     	     {
-    	    	 //System.out.println(e.toString());
+    	    	 
     	    
     	    	 return false;
     	        
@@ -116,7 +116,7 @@ public class DataHandler {
 	        return true;
 	     } catch ( Exception e )
 	     {
-	    	 //System.out.println(e.toString());
+	    	 
 	        return false;
 	     } 
      }
@@ -139,7 +139,7 @@ public class DataHandler {
 	        return true;
 	     } catch ( Exception e )
 	     {
-	    	 //System.out.println(e.toString());
+	    	 
 	        return false;
 	     } 
   }
