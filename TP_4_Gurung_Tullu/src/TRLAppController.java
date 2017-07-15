@@ -25,7 +25,8 @@ public class TRLAppController
 	
 	public String checkHold()
 	{
-		return LibraryDB.getPatron(this.studentID).getHold();
+		DataHandler D1 = new DataHandler();
+		return D1.retreiveHold(studentID);
 	}
 	
 	public Patron checkCopyOut()

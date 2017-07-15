@@ -7,15 +7,15 @@ import java.util.Calendar;
 	{
 		private String name;
 		private String patronID;
-		private String hold;
+		
 		private ArrayList<Copy> copiesOut = new ArrayList<Copy>();
 		
 
-		public Patron(String id, String name, String hold)
+		public Patron(String id, String name)
 		{
 			this.name = name;
 			this.patronID = id;
-			this.hold = hold;
+			
 			
 			
 		}
@@ -29,11 +29,7 @@ import java.util.Calendar;
 			return patronID;
 		}
 		
-		public String getHold()
-		{
-			return hold;
-		}
-	
+		
 		
 		public void checkCopyOut(Copy c)
 		{

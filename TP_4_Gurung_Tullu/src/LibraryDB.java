@@ -11,9 +11,9 @@ public class LibraryDB
 		patronStore = new HashMap<String,Patron>();
 		copyStore = new HashMap<String,Copy>();
 		
-		patronStore.put("P1", new Patron("P1", "Eric", ""));
-		patronStore.put("P2", new Patron("P2", "Amar", ""));
-		patronStore.put("P3", new Patron("P3", "Abebe", "Over Due"));
+		patronStore.put("P1", new Patron("P1", "Eric"));
+		patronStore.put("P2", new Patron("P2", "Amar"));
+		patronStore.put("P3", new Patron("P3", "Abebe"));
 		
 		copyStore.put("C1", new Copy("C1", "Fun with Objects"));
 		copyStore.put("C2", new Copy("C2", "More Fun with Objects"));
